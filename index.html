@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rangoli Maker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Digital Kolam Creator</h1>
+    <p>Create stunning symmetrical Kolam patterns</p>
+  </header>
+
+  <!-- Toolbar -->
+  <section class="toolbar">
+    <input type="color" id="colorPicker" value="#ff4c4c" title="Choose Color">
+    <input type="range" id="brushSize" min="5" max="50" value="10" title="Brush Size">
+    <select id="symmetry">
+      <option value="1">1-Symmetry</option>
+      <option value="2">2-Symmetry</option>
+      <option value="4" selected>4-Symmetry</option>
+      <option value="8">8-Symmetry</option>
+    </select>
+    <button id="clearBtn">Clear</button>
+    <button id="downloadBtn">Download</button>
+  </section>
+
+  <!-- Canvas -->
+  <section class="canvas-container">
+    <canvas id="rangoliCanvas"></canvas>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ | Your Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
