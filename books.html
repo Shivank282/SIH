@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - ShopVista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Section -->
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+
+                <!-- Search Bar Section -->
+                <div class="nav-search">
+                    <form class="search-form" role="search">
+                        <div class="search-container">
+                            <select class="search-categories" aria-label="Search categories">
+                                <option value="books">Books</option>
+                                <option value="all">All</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="home">Home & Garden</option>
+                            </select>
+                            <input type="search" class="search-input" placeholder="Search Books" aria-label="Search Books">
+                            <button type="submit" class="search-button" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Navigation Icons -->
+                <div class="nav-right">
+                    <!-- Account Section -->
+                    <div class="nav-item account-section">
+                        <a href="#" class="nav-link" aria-label="Account">
+                            <span class="nav-text">Hello, Sign in</span>
+                            <span class="nav-subtext">Account & Lists</span>
+                        </a>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div class="nav-item orders-section">
+                        <a href="#" class="nav-link" aria-label="Orders">
+                            <span class="nav-text">Returns</span>
+                            <span class="nav-subtext">& Orders</span>
+                        </a>
+                    </div>
+
+                    <!-- Cart Section -->
+                    <div class="nav-item cart-section">
+                        <a href="#" class="nav-link cart-link" aria-label="Shopping Cart">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <div class="cart-info">
+                                <span class="nav-text">Cart</span>
+                                <span class="cart-total">$0.00</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle">
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <div class="secondary-nav-container">
+                <ul class="secondary-nav-list">
+                    <li><a href="index.html" class="secondary-nav-link">Home</a></li>
+                    <li><a href="electronics.html" class="secondary-nav-link">Electronics</a></li>
+                    <li><a href="books.html" class="secondary-nav-link active">Books</a></li>
+                    <li><a href="clothing.html" class="secondary-nav-link">Clothing</a></li>
+                    <li><a href="home-garden.html" class="secondary-nav-link">Home & Garden</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1>Books</h1>
+                <p>Discover your next great read from our vast collection</p>
+            </div>
+        </section>
+
+        <!-- Books Categories -->
+        <section class="books-categories">
+            <div class="categories-grid">
+                <div class="category-card" data-category="fiction" onclick="filterByCategory('fiction')">
+                    <i class="fas fa-book"></i>
+                    <h3>Fiction</h3>
+                    <p>Novels, short stories, and literary works</p>
+                </div>
+                <div class="category-card" data-category="education" onclick="filterByCategory('education')">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>Textbooks and educational materials</p>
+                </div>
+                <div class="category-card" data-category="business" onclick="filterByCategory('business')">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Business</h3>
+                    <p>Business strategy and management books</p>
+                </div>
+                <div class="category-card" data-category="health" onclick="filterByCategory('health')">
+                    <i class="fas fa-heart"></i>
+                    <h3>Health & Wellness</h3>
+                    <p>Health, fitness, and wellness guides</p>
+                </div>
+                <div class="category-card" data-category="children" onclick="filterByCategory('children')">
+                    <i class="fas fa-child"></i>
+                    <h3>Children's Books</h3>
+                    <p>Books for kids of all ages</p>
+                </div>
+                <div class="category-card" data-category="history" onclick="filterByCategory('history')">
+                    <i class="fas fa-history"></i>
+                    <h3>History & Biography</h3>
+                    <p>Historical accounts and biographies</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Books -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Featured Books</h2>
+                <p>Bestsellers and new releases</p>
+            </div>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="productSearch" class="search-input" placeholder="Search books..." aria-label="Search books">
+                        <button class="clear-search" id="clearSearch" aria-label="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="genreFilter" class="genre-select" aria-label="Filter by genre">
+                            <option value="all">All Genres</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="non-fiction">Non-Fiction</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="romance">Romance</option>
+                            <option value="sci-fi">Science Fiction</option>
+                        </select>
+                        
+                        <select id="formatFilter" class="format-select" aria-label="Filter by format">
+                            <option value="all">All Formats</option>
+                            <option value="hardcover">Hardcover</option>
+                            <option value="paperback">Paperback</option>
+                            <option value="ebook">E-Book</option>
+                            <option value="audiobook">Audiobook</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-results-info">
+                    <span id="resultsCount">15 books found</span>
+                    <button class="reset-filters" id="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Book 1 -->
+                <div class="product-card" data-product-id="b1" data-category="books" data-price="16.99" data-rating="5" data-genre="fiction">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="The Great Gatsby" loading="lazy">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">The Great Gatsby</h3>
+                        <p class="product-author">by F. Scott Fitzgerald</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,847)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$16.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="b1">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="product-card" data-product-id="b2" data-category="books" data-price="24.99" data-rating="4" data-genre="non-fiction">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Atomic Habits" loading="lazy">
+                        <div class="product-badge new">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Atomic Habits</h3>
+                        <p class="product-author">by James Clear</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(3,421)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="b2">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="product-card" data-product-id="b3" data-category="books" data-price="19.99" data-rating="5" data-genre="mystery">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="The Silent Patient" loading="lazy">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">The Silent Patient</h3>
+                        <p class="product-author">by Alex Michaelides</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,523)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$19.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="b3">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="product-card" data-product-id="b4" data-category="books" data-price="14.99" data-rating="4" data-genre="romance">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="The Seven Husbands" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">The Seven Husbands of Evelyn Hugo</h3>
+                        <p class="product-author">by Taylor Jenkins Reid</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,134)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$14.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="b4">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="product-card" data-product-id="b5" data-category="books" data-price="22.99" data-rating="5" data-genre="sci-fi">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dune" loading="lazy">
+                        <div class="product-badge sale">Sale</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dune</h3>
+                        <p class="product-author">by Frank Herbert</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,756)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$22.99</span>
+                            <span class="original-price">$27.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="b5">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Book 6 -->
+                <div class="product-card" data-product-id="b6" data-category="books" data-price="18.99" data-rating="4" data-genre="non-fiction">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Educated" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Educated</h3>
+                        <p class="product-author">by Tara Westover</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(967)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$18.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="b6">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="electronics.html" class="footer-link">Electronics</a></li>
+                        <li><a href="books.html" class="footer-link">Books</a></li>
+                        <li><a href="clothing.html" class="footer-link">Clothing</a></li>
+                        <li><a href="home-garden.html" class="footer-link">Home & Garden</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Shipping Info</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Sell on ShopVista</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link youtube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-legal">
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Terms</a>
+                        <a href="#" class="legal-link">Privacy</a>
+                        <a href="#" class="legal-link">Cookies</a>
+                    </div>
+                    <p class="copyright">
+                        &copy; 2024 ShopVista. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
