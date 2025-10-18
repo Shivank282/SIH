@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics - ShopVista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Section -->
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+
+                <!-- Search Bar Section -->
+                <div class="nav-search">
+                    <form class="search-form" role="search">
+                        <div class="search-container">
+                            <select class="search-categories" aria-label="Search categories">
+                                <option value="electronics">Electronics</option>
+                                <option value="all">All</option>
+                                <option value="books">Books</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="home">Home & Garden</option>
+                            </select>
+                            <input type="search" class="search-input" placeholder="Search Electronics" aria-label="Search Electronics">
+                            <button type="submit" class="search-button" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Navigation Icons -->
+                <div class="nav-right">
+                    <!-- Account Section -->
+                    <div class="nav-item account-section">
+                        <a href="#" class="nav-link" aria-label="Account">
+                            <span class="nav-text">Hello, Sign in</span>
+                            <span class="nav-subtext">Account & Lists</span>
+                        </a>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div class="nav-item orders-section">
+                        <a href="#" class="nav-link" aria-label="Orders">
+                            <span class="nav-text">Returns</span>
+                            <span class="nav-subtext">& Orders</span>
+                        </a>
+                    </div>
+
+                    <!-- Cart Section -->
+                    <div class="nav-item cart-section">
+                        <a href="#" class="nav-link cart-link" aria-label="Shopping Cart">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <div class="cart-info">
+                                <span class="nav-text">Cart</span>
+                                <span class="cart-total">$0.00</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle">
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <div class="secondary-nav-container">
+                <ul class="secondary-nav-list">
+                    <li><a href="index.html" class="secondary-nav-link">Home</a></li>
+                    <li><a href="electronics.html" class="secondary-nav-link active">Electronics</a></li>
+                    <li><a href="books.html" class="secondary-nav-link">Books</a></li>
+                    <li><a href="clothing.html" class="secondary-nav-link">Clothing</a></li>
+                    <li><a href="home-garden.html" class="secondary-nav-link">Home & Garden</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1>Electronics</h1>
+                <p>Discover the latest in technology and gadgets</p>
+            </div>
+        </section>
+
+        <!-- Electronics Categories -->
+        <section class="electronics-categories">
+            <div class="categories-grid">
+                <div class="category-card" data-category="laptops" onclick="filterByCategory('laptops')">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Laptops & Computers</h3>
+                    <p>High-performance laptops and desktops</p>
+                </div>
+                <div class="category-card" data-category="smartphones" onclick="filterByCategory('smartphones')">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Smartphones</h3>
+                    <p>Latest smartphones and accessories</p>
+                </div>
+                <div class="category-card" data-category="audio" onclick="filterByCategory('audio')">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Audio & Headphones</h3>
+                    <p>Premium sound equipment</p>
+                </div>
+                <div class="category-card" data-category="tv" onclick="filterByCategory('tv')">
+                    <i class="fas fa-tv"></i>
+                    <h3>TV & Home Theater</h3>
+                    <p>Smart TVs and entertainment systems</p>
+                </div>
+                <div class="category-card" data-category="cameras" onclick="filterByCategory('cameras')">
+                    <i class="fas fa-camera"></i>
+                    <h3>Cameras & Photography</h3>
+                    <p>Professional and hobby cameras</p>
+                </div>
+                <div class="category-card" data-category="gaming" onclick="filterByCategory('gaming')">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming</h3>
+                    <p>Gaming consoles and accessories</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Electronics Products -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Featured Electronics</h2>
+                <p>Top-rated electronics and gadgets</p>
+            </div>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="productSearch" class="search-input" placeholder="Search electronics..." aria-label="Search electronics">
+                        <button class="clear-search" id="clearSearch" aria-label="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="priceFilter" class="price-select" aria-label="Filter by price">
+                            <option value="all">All Prices</option>
+                            <option value="0-100">Under $100</option>
+                            <option value="100-500">$100 - $500</option>
+                            <option value="500-1000">$500 - $1000</option>
+                            <option value="1000+">$1000+</option>
+                        </select>
+                        
+                        <select id="brandFilter" class="brand-select" aria-label="Filter by brand">
+                            <option value="all">All Brands</option>
+                            <option value="apple">Apple</option>
+                            <option value="samsung">Samsung</option>
+                            <option value="sony">Sony</option>
+                            <option value="lg">LG</option>
+                            <option value="dell">Dell</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-results-info">
+                    <span id="resultsCount">12 products found</span>
+                    <button class="reset-filters" id="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Electronics Product 1 -->
+                <div class="product-card" data-product-id="e1" data-category="electronics" data-price="1299.99" data-rating="5" data-brand="apple">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="MacBook Pro" loading="lazy">
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">MacBook Pro 14-inch M3 Chip</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,847)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$1,299.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="e1">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Electronics Product 2 -->
+                <div class="product-card" data-product-id="e2" data-category="electronics" data-price="299.99" data-rating="5" data-brand="apple">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Apple Watch" loading="lazy">
+                        <div class="product-badge new">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Apple Watch Series 9 GPS</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(3,421)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="e2">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Electronics Product 3 -->
+                <div class="product-card" data-product-id="e3" data-category="electronics" data-price="199.99" data-rating="5" data-brand="sony">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sony Headphones" loading="lazy">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sony WH-1000XM5 Noise Canceling Headphones</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,847)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199.99</span>
+                            <span class="original-price">$249.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="e3">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Electronics Product 4 -->
+                <div class="product-card" data-product-id="e4" data-category="electronics" data-price="79.99" data-rating="4" data-brand="samsung">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Samsung Speaker" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Samsung Galaxy Buds2 Pro</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,134)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="e4">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Electronics Product 5 -->
+                <div class="product-card" data-product-id="e5" data-category="electronics" data-price="899.99" data-rating="5" data-brand="lg">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="LG TV" loading="lazy">
+                        <div class="product-badge sale">Sale</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">LG OLED 55-inch 4K Smart TV</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,756)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$899.99</span>
+                            <span class="original-price">$1,199.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="e5">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Electronics Product 6 -->
+                <div class="product-card" data-product-id="e6" data-category="electronics" data-price="599.99" data-rating="4" data-brand="dell">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dell Monitor" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dell UltraSharp 27-inch 4K Monitor</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(967)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$599.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="e6">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="electronics.html" class="footer-link">Electronics</a></li>
+                        <li><a href="books.html" class="footer-link">Books</a></li>
+                        <li><a href="clothing.html" class="footer-link">Clothing</a></li>
+                        <li><a href="home-garden.html" class="footer-link">Home & Garden</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Shipping Info</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Sell on ShopVista</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link youtube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-legal">
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Terms</a>
+                        <a href="#" class="legal-link">Privacy</a>
+                        <a href="#" class="legal-link">Cookies</a>
+                    </div>
+                    <p class="copyright">
+                        &copy; 2024 ShopVista. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
