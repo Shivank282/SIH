@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing - ShopVista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Section -->
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+
+                <!-- Search Bar Section -->
+                <div class="nav-search">
+                    <form class="search-form" role="search">
+                        <div class="search-container">
+                            <select class="search-categories" aria-label="Search categories">
+                                <option value="clothing">Clothing</option>
+                                <option value="all">All</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="books">Books</option>
+                                <option value="home">Home & Garden</option>
+                            </select>
+                            <input type="search" class="search-input" placeholder="Search Clothing" aria-label="Search Clothing">
+                            <button type="submit" class="search-button" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Navigation Icons -->
+                <div class="nav-right">
+                    <!-- Account Section -->
+                    <div class="nav-item account-section">
+                        <a href="#" class="nav-link" aria-label="Account">
+                            <span class="nav-text">Hello, Sign in</span>
+                            <span class="nav-subtext">Account & Lists</span>
+                        </a>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div class="nav-item orders-section">
+                        <a href="#" class="nav-link" aria-label="Orders">
+                            <span class="nav-text">Returns</span>
+                            <span class="nav-subtext">& Orders</span>
+                        </a>
+                    </div>
+
+                    <!-- Cart Section -->
+                    <div class="nav-item cart-section">
+                        <a href="#" class="nav-link cart-link" aria-label="Shopping Cart">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <div class="cart-info">
+                                <span class="nav-text">Cart</span>
+                                <span class="cart-total">$0.00</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle">
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <div class="secondary-nav-container">
+                <ul class="secondary-nav-list">
+                    <li><a href="index.html" class="secondary-nav-link">Home</a></li>
+                    <li><a href="electronics.html" class="secondary-nav-link">Electronics</a></li>
+                    <li><a href="books.html" class="secondary-nav-link">Books</a></li>
+                    <li><a href="clothing.html" class="secondary-nav-link active">Clothing</a></li>
+                    <li><a href="home-garden.html" class="secondary-nav-link">Home & Garden</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1>Clothing</h1>
+                <p>Discover the latest fashion trends and styles</p>
+            </div>
+        </section>
+
+        <!-- Clothing Categories -->
+        <section class="clothing-categories">
+            <div class="categories-grid">
+                <div class="category-card" data-category="mens" onclick="filterByCategory('mens')">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Men's Clothing</h3>
+                    <p>Shirts, pants, jackets and more</p>
+                </div>
+                <div class="category-card" data-category="womens" onclick="filterByCategory('womens')">
+                    <i class="fas fa-female"></i>
+                    <h3>Women's Clothing</h3>
+                    <p>Dresses, tops, bottoms and accessories</p>
+                </div>
+                <div class="category-card" data-category="kids" onclick="filterByCategory('kids')">
+                    <i class="fas fa-child"></i>
+                    <h3>Kids' Clothing</h3>
+                    <p>Clothing for children of all ages</p>
+                </div>
+                <div class="category-card" data-category="athletic" onclick="filterByCategory('athletic')">
+                    <i class="fas fa-running"></i>
+                    <h3>Athletic Wear</h3>
+                    <p>Sports and fitness clothing</p>
+                </div>
+                <div class="category-card" data-category="shoes" onclick="filterByCategory('shoes')">
+                    <i class="fas fa-shoe-prints"></i>
+                    <h3>Shoes</h3>
+                    <p>Sneakers, boots, and formal shoes</p>
+                </div>
+                <div class="category-card" data-category="accessories" onclick="filterByCategory('accessories')">
+                    <i class="fas fa-gem"></i>
+                    <h3>Accessories</h3>
+                    <p>Bags, jewelry, and fashion accessories</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Clothing -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Featured Clothing</h2>
+                <p>Trending fashion items and styles</p>
+            </div>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="productSearch" class="search-input" placeholder="Search clothing..." aria-label="Search clothing">
+                        <button class="clear-search" id="clearSearch" aria-label="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="sizeFilter" class="size-select" aria-label="Filter by size">
+                            <option value="all">All Sizes</option>
+                            <option value="xs">XS</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                        </select>
+                        
+                        <select id="colorFilter" class="color-select" aria-label="Filter by color">
+                            <option value="all">All Colors</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-results-info">
+                    <span id="resultsCount">18 items found</span>
+                    <button class="reset-filters" id="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Clothing Item 1 -->
+                <div class="product-card" data-product-id="c1" data-category="clothing" data-price="49.99" data-rating="5" data-size="m" data-color="black">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Classic T-Shirt" loading="lazy">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Classic Cotton T-Shirt</h3>
+                        <p class="product-brand">Premium Brand</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,847)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="c1">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clothing Item 2 -->
+                <div class="product-card" data-product-id="c2" data-category="clothing" data-price="89.99" data-rating="4" data-size="l" data-color="blue">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Denim Jacket" loading="lazy">
+                        <div class="product-badge new">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vintage Denim Jacket</h3>
+                        <p class="product-brand">Style Co.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,523)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="c2">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clothing Item 3 -->
+                <div class="product-card" data-product-id="c3" data-category="clothing" data-price="129.99" data-rating="5" data-size="s" data-color="red">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Summer Dress" loading="lazy">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Elegant Summer Dress</h3>
+                        <p class="product-brand">Fashion Forward</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(3,421)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$129.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="c3">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clothing Item 4 -->
+                <div class="product-card" data-product-id="c4" data-category="clothing" data-price="79.99" data-rating="4" data-size="m" data-color="white">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Running Shoes" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Running Shoes</h3>
+                        <p class="product-brand">SportMax</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,134)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="c4">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clothing Item 5 -->
+                <div class="product-card" data-product-id="c5" data-category="clothing" data-price="199.99" data-rating="5" data-size="l" data-color="black">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Leather Jacket" loading="lazy">
+                        <div class="product-badge sale">Sale</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Genuine Leather Jacket</h3>
+                        <p class="product-brand">Luxury Wear</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,756)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199.99</span>
+                            <span class="original-price">$249.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="c5">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clothing Item 6 -->
+                <div class="product-card" data-product-id="c6" data-category="clothing" data-price="39.99" data-rating="4" data-size="s" data-color="green">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1506629905607-1b0b7b4a0b8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Casual Pants" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Comfortable Casual Pants</h3>
+                        <p class="product-brand">Comfort Zone</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(967)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="c6">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="electronics.html" class="footer-link">Electronics</a></li>
+                        <li><a href="books.html" class="footer-link">Books</a></li>
+                        <li><a href="clothing.html" class="footer-link">Clothing</a></li>
+                        <li><a href="home-garden.html" class="footer-link">Home & Garden</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Shipping Info</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Sell on ShopVista</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link youtube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-legal">
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Terms</a>
+                        <a href="#" class="legal-link">Privacy</a>
+                        <a href="#" class="legal-link">Cookies</a>
+                    </div>
+                    <p class="copyright">
+                        &copy; 2024 ShopVista. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
