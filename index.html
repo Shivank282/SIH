@@ -1,42 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rangoli Maker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopVista - Premium Online Shopping</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Digital Kolam Creator</h1>
-    <p>Create stunning symmetrical Kolam patterns</p>
-  </header>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Section -->
+                <div class="nav-logo">
+                    <a href="#" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
 
-  <!-- Toolbar -->
-  <section class="toolbar">
-    <input type="color" id="colorPicker" value="#ff4c4c" title="Choose Color">
-    <input type="range" id="brushSize" min="5" max="50" value="10" title="Brush Size">
-    <select id="symmetry">
-      <option value="1">1-Symmetry</option>
-      <option value="2">2-Symmetry</option>
-      <option value="4" selected>4-Symmetry</option>
-      <option value="8">8-Symmetry</option>
-    </select>
-    <button id="clearBtn">Clear</button>
-    <button id="downloadBtn">Download</button>
-  </section>
+                <!-- Search Bar Section -->
+                <div class="nav-search">
+                    <form class="search-form" role="search">
+                        <div class="search-container">
+                            <select class="search-categories" aria-label="Search categories">
+                                <option value="all">All</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="books">Books</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="home">Home & Garden</option>
+                            </select>
+                            <input type="search" class="search-input" placeholder="Search ShopVista" aria-label="Search ShopVista">
+                            <button type="submit" class="search-button" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-  <!-- Canvas -->
-  <section class="canvas-container">
-    <canvas id="rangoliCanvas"></canvas>
-  </section>
+                <!-- Right Navigation Icons -->
+                <div class="nav-right">
+                    <!-- Prime Section -->
+                    <div class="nav-item prime-section">
+                        <a href="#" class="nav-link prime-link" aria-label="Prime">
+                            <i class="fas fa-crown"></i>
+                            <span class="nav-text">Prime</span>
+                        </a>
+                    </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>Made with ❤️ | Your Name</p>
-  </footer>
+                    <!-- Account Section -->
+                    <div class="nav-item account-section">
+                        <a href="#" class="nav-link" aria-label="Account">
+                            <span class="nav-text">Hello, Sign in</span>
+                            <span class="nav-subtext">Account & Lists</span>
+                        </a>
+                    </div>
 
-  <script src="script.js"></script>
+                    <!-- Orders Section -->
+                    <div class="nav-item orders-section">
+                        <a href="#" class="nav-link" aria-label="Orders">
+                            <span class="nav-text">Returns</span>
+                            <span class="nav-subtext">& Orders</span>
+                        </a>
+                    </div>
+
+                    <!-- Cart Section -->
+                    <div class="nav-item cart-section">
+                        <a href="#" class="nav-link cart-link" aria-label="Shopping Cart">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <div class="cart-info">
+                                <span class="nav-text">Cart</span>
+                                <span class="cart-total">$0.00</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle">
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <div class="secondary-nav-container">
+                <ul class="secondary-nav-list">
+                    <li><a href="index.html" class="secondary-nav-link active">All</a></li>
+                    <li><a href="electronics.html" class="secondary-nav-link">Electronics</a></li>
+                    <li><a href="books.html" class="secondary-nav-link">Books</a></li>
+                    <li><a href="clothing.html" class="secondary-nav-link">Clothing</a></li>
+                    <li><a href="home-garden.html" class="secondary-nav-link">Home & Garden</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-slides" id="carouselSlides">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80" alt="Electronics Mega Sale" loading="lazy">
+                            </div>
+                            <div class="slide-text">
+                                <h2>Electronics Mega Sale</h2>
+                                <p>Up to 70% off on smartphones, laptops, and gadgets. Limited time offer!</p>
+                                <button class="cta-button">Shop Electronics</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80" alt="Fashion Collection" loading="lazy">
+                            </div>
+                            <div class="slide-text">
+                                <h2>Fashion & Style</h2>
+                                <p>Discover the latest trends in clothing, shoes, and accessories. Free shipping on orders over $25!</p>
+                                <button class="cta-button">Shop Fashion</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80" alt="Home & Garden" loading="lazy">
+                            </div>
+                            <div class="slide-text">
+                                <h2>Home & Garden Essentials</h2>
+                                <p>Transform your living space with furniture, décor, and garden supplies. Same-day delivery available!</p>
+                                <button class="cta-button">Shop Home & Garden</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="carousel-arrow carousel-arrow-left" id="prevBtn" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-arrow carousel-arrow-right" id="nextBtn" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Dot Indicators -->
+                <div class="carousel-dots" id="carouselDots">
+                    <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- Product Categories Section -->
+        <section class="categories-section">
+            <h2>Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Electronics</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Books</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Clothing</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Home & Garden</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Deals Section -->
+        <section class="deals-section">
+            <div class="section-header">
+                <h2>Today's Deals</h2>
+                <p>Limited time offers - Don't miss out!</p>
+            </div>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <div class="deal-badge">50% OFF</div>
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Electronics Deal">
+                    <h3>Electronics Sale</h3>
+                    <p class="deal-price">Up to 50% off</p>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">30% OFF</div>
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Fashion Deal">
+                    <h3>Fashion Clearance</h3>
+                    <p class="deal-price">Up to 30% off</p>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">25% OFF</div>
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Home Deal">
+                    <h3>Home & Garden</h3>
+                    <p class="deal-price">Up to 25% off</p>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">40% OFF</div>
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Books Deal">
+                    <h3>Books & Media</h3>
+                    <p class="deal-price">Up to 40% off</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Best Sellers</h2>
+                <p>Our most popular and highly-rated products</p>
+            </div>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="productSearch" class="search-input" placeholder="Search products..." aria-label="Search products">
+                        <button class="clear-search" id="clearSearch" aria-label="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="categoryFilter" class="category-select" aria-label="Filter by category">
+                            <option value="all">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="home">Home & Garden</option>
+                            <option value="sports">Sports & Fitness</option>
+                        </select>
+                        
+                        <select id="priceFilter" class="price-select" aria-label="Filter by price">
+                            <option value="all">All Prices</option>
+                            <option value="0-50">Under $50</option>
+                            <option value="50-100">$50 - $100</option>
+                            <option value="100-200">$100 - $200</option>
+                            <option value="200-500">$200 - $500</option>
+                            <option value="500+">$500+</option>
+                        </select>
+                        
+                        <select id="ratingFilter" class="rating-select" aria-label="Filter by rating">
+                            <option value="all">All Ratings</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4+ Stars</option>
+                            <option value="3">3+ Stars</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-results-info">
+                    <span id="resultsCount">8 products found</span>
+                    <button class="reset-filters" id="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Product 1 -->
+                <div class="product-card" data-product-id="1" data-category="electronics" data-price="199.99" data-rating="5">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Wireless Headphones" loading="lazy">
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Wireless Headphones with Noise Cancellation</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,847)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199.99</span>
+                            <span class="original-price">$249.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="1">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-product-id="2" data-category="sports" data-price="89.99" data-rating="4">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Running Shoes" loading="lazy">
+                        <div class="product-badge sale">Sale</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Professional Running Shoes for Men and Women</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,523)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                            <span class="original-price">$129.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-product-id="3" data-category="electronics" data-price="299.99" data-rating="5">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Smart Watch" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Smart Watch with Health Monitoring and GPS</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(3,421)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="3">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-product-id="4" data-category="electronics" data-price="1299.99" data-rating="4">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Laptop" loading="lazy">
+                        <div class="product-badge new">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">High-Performance Laptop for Work and Gaming</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(892)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$1,299.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="4">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-product-id="5" data-category="home" data-price="149.99" data-rating="5">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Coffee Maker" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Automatic Coffee Maker with Programmable Timer</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,756)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$149.99</span>
+                            <span class="original-price">$199.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="5">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-product-id="6" data-category="electronics" data-price="79.99" data-rating="4">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Bluetooth Speaker" loading="lazy">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Portable Bluetooth Speaker with Waterproof Design</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,134)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="6">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-product-id="7" data-category="home" data-price="129.99" data-rating="5">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Home Decor" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Modern Home Decor Set for Living Room</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(967)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$129.99</span>
+                            <span class="original-price">$179.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="7">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-product-id="8" data-category="fashion" data-price="69.99" data-rating="4">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Fashion Jacket" loading="lazy">
+                        <div class="product-badge sale">30% Off</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Stylish Winter Jacket for Men and Women</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,445)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$69.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="8">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Form Section -->
+        <section class="feedback-section">
+            <div class="feedback-container">
+                <div class="feedback-header">
+                    <h2>We'd Love to Hear From You</h2>
+                    <p>Share your feedback, suggestions, or report any issues</p>
+                </div>
+                
+                <form class="feedback-form" id="feedbackForm">
+                    <div class="form-group">
+                        <label for="feedbackName" class="form-label">Name *</label>
+                        <input type="text" id="feedbackName" name="name" class="form-input" required aria-label="Your name">
+                        <span class="form-error" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackEmail" class="form-label">Email *</label>
+                        <input type="email" id="feedbackEmail" name="email" class="form-input" required aria-label="Your email">
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackSubject" class="form-label">Subject</label>
+                        <select id="feedbackSubject" name="subject" class="form-select" aria-label="Feedback subject">
+                            <option value="">Select a subject</option>
+                            <option value="general">General Feedback</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="compliment">Compliment</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackMessage" class="form-label">Message *</label>
+                        <textarea id="feedbackMessage" name="message" class="form-textarea" rows="5" required aria-label="Your message" placeholder="Please share your thoughts, suggestions, or report any issues you've encountered..."></textarea>
+                        <span class="form-error" id="messageError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-checkbox-label">
+                            <input type="checkbox" id="feedbackConsent" name="consent" class="form-checkbox" required>
+                            <span class="checkbox-text">I agree to the <a href="#" class="privacy-link">Privacy Policy</a> and consent to my data being processed</span>
+                        </label>
+                        <span class="form-error" id="consentError"></span>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" id="submitFeedback">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Feedback
+                        </button>
+                        <button type="button" class="reset-btn" id="resetFeedback">
+                            <i class="fas fa-undo"></i>
+                            Reset Form
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="feedback-success" id="feedbackSuccess" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank You!</h3>
+                    <p>Your feedback has been submitted successfully. We'll review it and get back to you if needed.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="electronics.html" class="footer-link">Electronics</a></li>
+                        <li><a href="books.html" class="footer-link">Books</a></li>
+                        <li><a href="clothing.html" class="footer-link">Clothing</a></li>
+                        <li><a href="home-garden.html" class="footer-link">Home & Garden</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Shipping Info</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Sell on ShopVista</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link youtube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-legal">
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Terms</a>
+                        <a href="#" class="legal-link">Privacy</a>
+                        <a href="#" class="legal-link">Cookies</a>
+                    </div>
+                    <p class="copyright">
+                        &copy; 2024 ShopVista. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
