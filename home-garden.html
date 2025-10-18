@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Garden - ShopVista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Section -->
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+
+                <!-- Search Bar Section -->
+                <div class="nav-search">
+                    <form class="search-form" role="search">
+                        <div class="search-container">
+                            <select class="search-categories" aria-label="Search categories">
+                                <option value="home">Home & Garden</option>
+                                <option value="all">All</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="books">Books</option>
+                                <option value="clothing">Clothing</option>
+                            </select>
+                            <input type="search" class="search-input" placeholder="Search Home & Garden" aria-label="Search Home & Garden">
+                            <button type="submit" class="search-button" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Navigation Icons -->
+                <div class="nav-right">
+                    <!-- Account Section -->
+                    <div class="nav-item account-section">
+                        <a href="#" class="nav-link" aria-label="Account">
+                            <span class="nav-text">Hello, Sign in</span>
+                            <span class="nav-subtext">Account & Lists</span>
+                        </a>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div class="nav-item orders-section">
+                        <a href="#" class="nav-link" aria-label="Orders">
+                            <span class="nav-text">Returns</span>
+                            <span class="nav-subtext">& Orders</span>
+                        </a>
+                    </div>
+
+                    <!-- Cart Section -->
+                    <div class="nav-item cart-section">
+                        <a href="#" class="nav-link cart-link" aria-label="Shopping Cart">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <div class="cart-info">
+                                <span class="nav-text">Cart</span>
+                                <span class="cart-total">$0.00</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle">
+                    <button class="menu-btn" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <div class="secondary-nav-container">
+                <ul class="secondary-nav-list">
+                    <li><a href="index.html" class="secondary-nav-link">Home</a></li>
+                    <li><a href="electronics.html" class="secondary-nav-link">Electronics</a></li>
+                    <li><a href="books.html" class="secondary-nav-link">Books</a></li>
+                    <li><a href="clothing.html" class="secondary-nav-link">Clothing</a></li>
+                    <li><a href="home-garden.html" class="secondary-nav-link active">Home & Garden</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1>Home & Garden</h1>
+                <p>Transform your living space with our home and garden essentials</p>
+            </div>
+        </section>
+
+        <!-- Home & Garden Categories -->
+        <section class="home-garden-categories">
+            <div class="categories-grid">
+                <div class="category-card" data-category="furniture" onclick="filterByCategory('furniture')">
+                    <i class="fas fa-couch"></i>
+                    <h3>Furniture</h3>
+                    <p>Living room, bedroom, and dining furniture</p>
+                </div>
+                <div class="category-card" data-category="decor" onclick="filterByCategory('decor')">
+                    <i class="fas fa-home"></i>
+                    <h3>Home Décor</h3>
+                    <p>Wall art, lighting, and decorative items</p>
+                </div>
+                <div class="category-card" data-category="garden" onclick="filterByCategory('garden')">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Garden & Outdoor</h3>
+                    <p>Plants, tools, and outdoor furniture</p>
+                </div>
+                <div class="category-card" data-category="kitchen" onclick="filterByCategory('kitchen')">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Kitchen & Dining</h3>
+                    <p>Cookware, appliances, and dining sets</p>
+                </div>
+                <div class="category-card" data-category="bedding" onclick="filterByCategory('bedding')">
+                    <i class="fas fa-bed"></i>
+                    <h3>Bedding & Bath</h3>
+                    <p>Sheets, towels, and bathroom accessories</p>
+                </div>
+                <div class="category-card" data-category="tools" onclick="filterByCategory('tools')">
+                    <i class="fas fa-tools"></i>
+                    <h3>Tools & Hardware</h3>
+                    <p>DIY tools and home improvement supplies</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Home & Garden Products -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Featured Home & Garden</h2>
+                <p>Essential items for your home and garden</p>
+            </div>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="productSearch" class="search-input" placeholder="Search home & garden..." aria-label="Search home & garden">
+                        <button class="clear-search" id="clearSearch" aria-label="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="roomFilter" class="room-select" aria-label="Filter by room">
+                            <option value="all">All Rooms</option>
+                            <option value="living">Living Room</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bathroom">Bathroom</option>
+                            <option value="garden">Garden</option>
+                        </select>
+                        
+                        <select id="styleFilter" class="style-select" aria-label="Filter by style">
+                            <option value="all">All Styles</option>
+                            <option value="modern">Modern</option>
+                            <option value="traditional">Traditional</option>
+                            <option value="rustic">Rustic</option>
+                            <option value="minimalist">Minimalist</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-results-info">
+                    <span id="resultsCount">20 items found</span>
+                    <button class="reset-filters" id="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Home & Garden Item 1 -->
+                <div class="product-card" data-product-id="h1" data-category="home" data-price="299.99" data-rating="5" data-room="living" data-style="modern">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Sofa" loading="lazy">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Modern 3-Seater Sofa</h3>
+                        <p class="product-brand">Comfort Living</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,847)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="h1">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Home & Garden Item 2 -->
+                <div class="product-card" data-product-id="h2" data-category="home" data-price="89.99" data-rating="4" data-room="garden" data-style="rustic">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Garden Planter" loading="lazy">
+                        <div class="product-badge new">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ceramic Garden Planter Set</h3>
+                        <p class="product-brand">Garden Pro</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,523)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="h2">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Home & Garden Item 3 -->
+                <div class="product-card" data-product-id="h3" data-category="home" data-price="159.99" data-rating="5" data-room="kitchen" data-style="modern">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Kitchen Blender" loading="lazy">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">High-Speed Kitchen Blender</h3>
+                        <p class="product-brand">Kitchen Master</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(3,421)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$159.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="h3">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Home & Garden Item 4 -->
+                <div class="product-card" data-product-id="h4" data-category="home" data-price="49.99" data-rating="4" data-room="bedroom" data-style="minimalist">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Bedding Set" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Cotton Bedding Set</h3>
+                        <p class="product-brand">Sleep Comfort</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(2,134)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="h4">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Home & Garden Item 5 -->
+                <div class="product-card" data-product-id="h5" data-category="home" data-price="199.99" data-rating="5" data-room="living" data-style="traditional">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Coffee Table" loading="lazy">
+                        <div class="product-badge sale">Sale</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Oak Wood Coffee Table</h3>
+                        <p class="product-brand">Wood Craft</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1,756)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199.99</span>
+                            <span class="original-price">$249.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="h5">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Home & Garden Item 6 -->
+                <div class="product-card" data-product-id="h6" data-category="home" data-price="79.99" data-rating="4" data-room="bathroom" data-style="modern">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Bathroom Mirror" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">LED Bathroom Mirror</h3>
+                        <p class="product-brand">Bath Luxe</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(967)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="h6">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="electronics.html" class="footer-link">Electronics</a></li>
+                        <li><a href="books.html" class="footer-link">Books</a></li>
+                        <li><a href="clothing.html" class="footer-link">Clothing</a></li>
+                        <li><a href="home-garden.html" class="footer-link">Home & Garden</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Shipping Info</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Sell on ShopVista</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">ShopVista</span>
+                    </a>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link youtube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-legal">
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Terms</a>
+                        <a href="#" class="legal-link">Privacy</a>
+                        <a href="#" class="legal-link">Cookies</a>
+                    </div>
+                    <p class="copyright">
+                        &copy; 2024 ShopVista. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
